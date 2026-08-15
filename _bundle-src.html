@@ -9,7 +9,7 @@
 <!-- Resources referenced from JS/JSX strings (lifted for offline bundling) -->
 <meta name="ext-resource-dependency" content="assets/navia-logo-ondark.svg" data-resource-id="logoDark" />
 <meta name="ext-resource-dependency" content="assets/team/reza-adeli.jpg" data-resource-id="teamReza" />
-<meta name="ext-resource-dependency" content="assets/sim/hero-hydrogen-valve.mp4" data-resource-id="heroValve" />
+<meta name="ext-resource-dependency" content="assets/sim/std/hero-hydrogen-valve.webm" data-resource-id="heroValve" />
 <meta name="ext-resource-dependency" content="assets/sim/hero-2.mp4" data-resource-id="heroRelease" />
 <meta name="ext-resource-dependency" content="assets/sim/hero-3.mp4" data-resource-id="heroScramjet" />
 <meta name="ext-resource-dependency" content="assets/sim/h2-mole-fraction.mp4" data-resource-id="h2mole" />
@@ -23,7 +23,7 @@
 <meta name="ext-resource-dependency" content="assets/sim/fem-static-strain-b.mp4" data-resource-id="femStrainB" />
 <meta name="ext-resource-dependency" content="assets/sim/fem-modal-815hz.mp4" data-resource-id="femModal815" />
 <meta name="ext-resource-dependency" content="assets/sim/fem-modal-2923hz.mp4" data-resource-id="femModal2923" />
-<meta name="ext-resource-dependency" content="assets/sim/cfd-total-pressure-aero.mp4" data-resource-id="cfdTotalPressure" />
+<meta name="ext-resource-dependency" content="assets/sim/std/cfd-total-pressure-aero.webm" data-resource-id="cfdTotalPressure" />
 <meta name="ext-resource-dependency" content="assets/sim/cfd-h2-tank-temperature.mp4" data-resource-id="cfdH2TankTemp" />
 <meta name="ext-resource-dependency" content="assets/sim/hydrogen-valve-mach.mp4" data-resource-id="h2ValveMach" />
 <meta name="ext-resource-dependency" content="assets/sim/h2-emptying-process.mp4" data-resource-id="h2Emptying" />
@@ -114,7 +114,7 @@
     var ID = {
       'assets/navia-logo-ondark.svg': 'logoDark',
       'assets/team/reza-adeli.jpg': 'teamReza',
-      'assets/sim/hero-hydrogen-valve.mp4': 'heroValve',
+      'assets/sim/std/hero-hydrogen-valve.webm': 'heroValve',
       'assets/sim/hero-2.mp4': 'heroRelease',
       'assets/sim/hero-3.mp4': 'heroScramjet',
       'assets/sim/h2-mole-fraction.mp4': 'h2mole',
@@ -128,7 +128,7 @@
       'assets/sim/fem-static-strain-b.mp4': 'femStrainB',
       'assets/sim/fem-modal-815hz.mp4': 'femModal815',
       'assets/sim/fem-modal-2923hz.mp4': 'femModal2923',
-      'assets/sim/cfd-total-pressure-aero.mp4': 'cfdTotalPressure',
+      'assets/sim/std/cfd-total-pressure-aero.webm': 'cfdTotalPressure',
       'assets/sim/cfd-h2-tank-temperature.mp4': 'cfdH2TankTemp',
       'assets/sim/hydrogen-valve-mach.mp4': 'h2ValveMach',
       'assets/sim/h2-emptying-process.mp4': 'h2Emptying',
@@ -597,7 +597,7 @@ window.BlobVideo = BlobVideo;
 /* ===== HeroGallery.jsx ===== */
 // Navia marketing site — hero media gallery (flip through all simulation videos)
 const HERO_MEDIA_SRC = [
-  { type: 'video', src: 'assets/sim/hero-hydrogen-valve.mp4' },
+  { type: 'video', src: 'assets/sim/std/hero-hydrogen-valve.webm' },
   { type: 'video', src: 'assets/sim/hero-2.mp4' },
   { type: 'video', src: 'assets/sim/hero-3.mp4' },
 ];
@@ -890,7 +890,7 @@ const EXPERTISE = {
   ] },
   cfd: { services: [
     { media: { type: 'image', src: 'assets/sim/cfd-compressor-housing.jpg', fit: 'scale-down' } },
-    { media: { type: 'video', src: 'assets/sim/cfd-total-pressure-aero.mp4' } },
+    { media: { type: 'video', src: 'assets/sim/std/cfd-total-pressure-aero.webm' } },
     { media: { type: 'image', src: 'assets/sim/cfd-compressor-5000.jpg', fit: 'scale-down' } },
   ] },
   hydrogen: { services: [

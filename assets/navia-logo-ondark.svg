@@ -1,0 +1,9 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Navias">
+  <g stroke="#84a4ff" stroke-width="8.5" stroke-linecap="round" fill="none" transform="translate(8,28)">
+    <path d="M4 8 C 34 8, 50 20, 72 36" opacity="0.45"></path>
+    <path d="M4 36 C 38 36, 52 36, 80 36"></path>
+    <path d="M4 64 C 34 64, 50 52, 72 36" opacity="0.45"></path>
+  </g>
+  <circle cx="89" cy="64" r="6.5" fill="#ef5a3c"></circle>
+  <text x="120" y="80" font-family="Sora, system-ui, sans-serif" font-size="60" font-weight="700" letter-spacing="-2.5" fill="#f2f5fa">Navias</text>
+</svg>

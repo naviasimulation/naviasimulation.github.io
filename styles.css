@@ -1,0 +1,310 @@
+/* Navias Design System — flattened tokens (self-contained) */
+
+/* ===== tokens/fonts.css ===== */
+/* ============================================================
+   Navia — Webfonts
+   Geometric sans (Sora) + engineering mono (IBM Plex Mono).
+   NOTE: Loaded from Google Fonts CDN. For production, self-host
+   the .woff2 binaries and replace the @import below with local
+   @font-face rules. Flagged to the team.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+
+/* ===== tokens/colors.css ===== */
+/* ============================================================
+   Navia — Color tokens
+   Direction: deep aerospace blue, cool titanium neutrals, and a
+   restrained thermal signal (heatmap) for simulation data.
+   Base scales first, then semantic aliases. Light-first with a
+   [data-theme="dark"] scope.
+   ============================================================ */
+
+:root {
+  /* ---- Brand: Aerospace blue ---------------------------------- */
+  --blue-50:  #eef3ff;
+  --blue-100: #d9e4ff;
+  --blue-200: #b3c8ff;
+  --blue-300: #84a4ff;
+  --blue-400: #4f78f5;
+  --blue-500: #2a55e0;   /* primary */
+  --blue-600: #1c3fc4;   /* primary pressed */
+  --blue-700: #18329b;
+  --blue-800: #142878;
+  --blue-900: #0f1f5c;
+  --blue-950: #0a1538;   /* deep navy ground */
+
+  /* ---- Neutrals: cool titanium/steel -------------------------- */
+  --steel-0:   #ffffff;
+  --steel-25:  #fafbfc;
+  --steel-50:  #f4f6f9;
+  --steel-100: #e9edf3;
+  --steel-200: #d6dde7;
+  --steel-300: #b9c3d2;
+  --steel-400: #8c98ab;
+  --steel-500: #647186;
+  --steel-600: #495567;
+  --steel-700: #353f4e;
+  --steel-800: #232b37;
+  --steel-900: #161c26;
+  --steel-950: #0d121a;
+
+  /* ---- Thermal signal (heatmap / simulation data) ------------- */
+  --thermal-cool:  #1fb6c9;   /* cyan / low temp */
+  --thermal-mid:   #f2b441;   /* amber / mid */
+  --thermal-hot:   #ef5a3c;   /* orange-red / high */
+  --thermal-peak:  #c4233c;   /* crimson / peak */
+
+  /* ---- Functional semantics ----------------------------------- */
+  --green-500:  #1f9d6b;   /* nominal / pass */
+  --green-50:   #e6f5ee;
+  --amber-500:  #d98a17;   /* caution */
+  --amber-50:   #fbf1df;
+  --red-500:    #d83b3b;   /* fault / fail */
+  --red-50:     #fbe9e9;
+
+  /* ---- Signature gradients ------------------------------------ */
+  --grad-thermal: linear-gradient(90deg, var(--thermal-cool) 0%, var(--thermal-mid) 48%, var(--thermal-hot) 78%, var(--thermal-peak) 100%);
+  --grad-deep:    linear-gradient(160deg, var(--blue-900) 0%, var(--blue-950) 60%, var(--steel-950) 100%);
+  --grad-mesh:    radial-gradient(120% 120% at 100% 0%, rgba(42,85,224,0.16) 0%, rgba(42,85,224,0) 55%); /* @kind color */
+
+  /* ============================================================
+     SEMANTIC ALIASES — light mode (default)
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-page:    var(--steel-25);
+  --surface-card:    var(--steel-0);
+  --surface-sunken:  var(--steel-50);
+  --surface-raised:  var(--steel-0);
+  --surface-inverse: var(--blue-950);
+  --surface-hover:   var(--steel-50);
+  --surface-active:  var(--steel-100);
+
+  /* Text */
+  --text-strong:   var(--steel-900);
+  --text-body:     var(--steel-700);
+  --text-muted:    var(--steel-500);
+  --text-subtle:   var(--steel-400);
+  --text-inverse:  var(--steel-0);
+  --text-link:     var(--blue-500);
+  --text-brand:    var(--blue-600);
+
+  /* Borders / lines */
+  --border-subtle: var(--steel-100);
+  --border-default:var(--steel-200);
+  --border-strong: var(--steel-300);
+  --border-focus:  var(--blue-400);
+  --hairline:      rgba(13,18,26,0.08);
+
+  /* Brand / interactive */
+  --brand:           var(--blue-500);
+  --brand-hover:     var(--blue-600);
+  --brand-pressed:   var(--blue-700);
+  --brand-subtle-bg: var(--blue-50);
+  --brand-ring:      rgba(42,85,224,0.32);
+
+  /* Accent (used sparingly) */
+  --accent:          var(--thermal-hot);
+  --accent-subtle-bg:#fdeee9;
+
+  /* Status */
+  --status-ok:     var(--green-500);
+  --status-ok-bg:  var(--green-50);
+  --status-warn:   var(--amber-500);
+  --status-warn-bg:var(--amber-50);
+  --status-fault:  var(--red-500);
+  --status-fault-bg:var(--red-50);
+
+  /* Data viz ramp (discrete) */
+  --viz-1: var(--blue-500);
+  --viz-2: var(--thermal-cool);
+  --viz-3: var(--thermal-mid);
+  --viz-4: var(--thermal-hot);
+  --viz-5: var(--steel-500);
+}
+
+/* ============================================================
+   SEMANTIC ALIASES — dark mode
+   ============================================================ */
+[data-theme="dark"] {
+  --surface-page:    var(--steel-950);
+  --surface-card:    #131a24;
+  --surface-sunken:  #0d1018;
+  --surface-raised:  #1a2230;
+  --surface-inverse: var(--steel-0);
+  --surface-hover:   #1a222e;
+  --surface-active:  #212b39;
+
+  --text-strong:   #f2f5fa;
+  --text-body:     #c2ccdb;
+  --text-muted:    #8593a8;
+  --text-subtle:   #5e6c80;
+  --text-inverse:  var(--steel-900);
+  --text-link:     var(--blue-300);
+  --text-brand:    var(--blue-300);
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-default:rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.18);
+  --border-focus:  var(--blue-400);
+  --hairline:      rgba(255,255,255,0.08);
+
+  --brand:           var(--blue-400);
+  --brand-hover:     var(--blue-300);
+  --brand-pressed:   var(--blue-200);
+  --brand-subtle-bg: rgba(42,85,224,0.16);
+  --brand-ring:      rgba(79,120,245,0.40);
+
+  --accent:          var(--thermal-hot);
+  --accent-subtle-bg:rgba(239,90,60,0.16);
+
+  --status-ok-bg:  rgba(31,157,107,0.16);
+  --status-warn-bg:rgba(217,138,23,0.16);
+  --status-fault-bg:rgba(216,59,59,0.16);
+}
+
+
+/* ===== tokens/typography.css ===== */
+/* ============================================================
+   Navia — Typography tokens
+   Geometric sans (Sora) for UI + display; mono (IBM Plex Mono)
+   for data, labels, specs, and code. Tight, technical rhythm.
+   ============================================================ */
+
+:root {
+  /* ---- Families --------------------------------------------- */
+  --font-sans: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- Weights ---------------------------------------------- */
+  --fw-light: 300;      /* @kind font */
+  --fw-regular: 400;    /* @kind font */
+  --fw-medium: 500;     /* @kind font */
+  --fw-semibold: 600;   /* @kind font */
+  --fw-bold: 700;       /* @kind font */
+  --fw-extrabold: 800;  /* @kind font */
+
+  /* ---- Type scale (1.250 major-third-ish, tuned) ------------ */
+  --text-2xs: 0.6875rem;  /* 11px — mono micro labels */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-base:1rem;       /* 16px */
+  --text-md:  1.125rem;   /* 18px */
+  --text-lg:  1.375rem;   /* 22px */
+  --text-xl:  1.75rem;    /* 28px */
+  --text-2xl: 2.25rem;    /* 36px */
+  --text-3xl: 3rem;       /* 48px */
+  --text-4xl: 3.75rem;    /* 60px */
+  --text-5xl: 4.75rem;    /* 76px */
+
+  /* ---- Line heights ----------------------------------------- */
+  --leading-none: 1;
+  --leading-tight: 1.12;
+  --leading-snug: 1.28;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Letter spacing --------------------------------------- */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-mono-label: 0.12em;  /* uppercase mono eyebrows */
+
+  /* ---- Semantic roles --------------------------------------- */
+  --display-font: var(--font-display);
+  --display-weight: var(--fw-bold);
+  --display-tracking: var(--tracking-tighter);
+  --display-leading: var(--leading-tight);
+
+  --heading-font: var(--font-sans);
+  --heading-weight: var(--fw-semibold);
+  --heading-tracking: var(--tracking-tight);
+
+  --body-font: var(--font-sans);
+  --body-weight: var(--fw-regular);
+  --body-leading: var(--leading-relaxed);
+
+  --label-font: var(--font-mono);
+  --label-weight: var(--fw-medium);
+  --label-tracking: var(--tracking-mono-label);
+}
+
+
+/* ===== tokens/spacing.css ===== */
+/* ============================================================
+   Navia — Spacing, radius, shadow, motion, layout
+   8px base grid with a few sub-steps. Cool, low-diffusion
+   shadows (engineered, not soft/blobby). Crisp radii.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing (8px grid) ----------------------------------- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 2.5rem;    /* 40 */
+  --space-8: 3rem;      /* 48 */
+  --space-9: 4rem;      /* 64 */
+  --space-10: 5rem;     /* 80 */
+  --space-12: 7rem;     /* 112 */
+  --space-16: 9.5rem;   /* 152 */
+
+  /* ---- Radius (crisp, mechanical) --------------------------- */
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --radius-2xl: 26px;
+  --radius-pill: 999px;
+
+  /* ---- Borders ---------------------------------------------- */
+  --border-width: 1px;          /* @kind other */
+  --border-width-strong: 1.5px; /* @kind other */
+
+  /* ---- Shadows (cool, tight, low-spread) -------------------- */
+  --shadow-xs: 0 1px 2px rgba(13,18,26,0.06);
+  --shadow-sm: 0 1px 3px rgba(13,18,26,0.08), 0 1px 2px rgba(13,18,26,0.04);
+  --shadow-md: 0 4px 12px rgba(13,18,26,0.08), 0 2px 4px rgba(13,18,26,0.04);
+  --shadow-lg: 0 12px 28px rgba(13,18,26,0.12), 0 4px 8px rgba(13,18,26,0.05);
+  --shadow-xl: 0 24px 56px rgba(13,18,26,0.16), 0 8px 16px rgba(13,18,26,0.06);
+  --shadow-brand: 0 6px 20px rgba(42,85,224,0.28);
+  --ring-focus: 0 0 0 3px var(--brand-ring);
+  --inset-line: inset 0 0 0 1px var(--hairline);
+
+  /* ---- Motion ----------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);      /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);   /* @kind other */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);   /* @kind other */
+  --dur-fast: 120ms;    /* @kind other */
+  --dur-base: 200ms;    /* @kind other */
+  --dur-slow: 360ms;    /* @kind other */
+  --dur-slower: 600ms;  /* @kind other */
+
+  /* ---- Layout ----------------------------------------------- */
+  --container-sm: 640px;   /* @kind spacing */
+  --container-md: 880px;   /* @kind spacing */
+  --container-lg: 1120px;  /* @kind spacing */
+  --container-xl: 1320px;  /* @kind spacing */
+  --gutter: var(--space-5);
+  --header-h: 68px;        /* @kind spacing */
+
+  /* ---- Z-index ---------------------------------------------- */
+  --z-base: 0;        /* @kind other */
+  --z-raised: 10;     /* @kind other */
+  --z-sticky: 100;    /* @kind other */
+  --z-overlay: 1000;  /* @kind other */
+  --z-modal: 1100;    /* @kind other */
+  --z-toast: 1200;    /* @kind other */
+}
+
+
